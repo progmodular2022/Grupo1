@@ -6,10 +6,11 @@ Vindo seguinte vídeo [YouTube video](https://www.youtube.com/watch?v=rY-igT2N8z
 ## Descrição
 Repositório para integração contínua através de testes automatizados em Python
 
-The linting is handled by a custom GitHub Action [`pylinters`](https://github.com/marketplace/actions/pylinters) written by myself. The testing is handled by pytest.
+O linting is é feito usando um GitHub Action customizado [`pylinters`](https://github.com/marketplace/actions/pylinters) escrito por programmingwithalex. 
+Os testes são feito pelo pytest.
 
 ## Conteúdo
 
-* `.py` simplistic files to lint with the GitHub Action `pylinters` and test with `pytest`
-* `tests/` directory which contains the various `pytest` tests to run
-* `requirements.txt` which contains the necessary packages to run the CI
+* Arquivos `main.py` e `test_main.py` que servem como exemplo para como rodar os testes automatizados
+* Diretório `tests/` contém as várias runs de `pytest` que serão rodadas, uma para cada arquivo `.py` que será testado
+* `requirements.txt` que contém os packages necessários para a integração contínua

@@ -3,7 +3,7 @@ import os
 
 
 def add(a, b) -> int:
-    return math.floor(b + a)
+    return math.floor(a + b)
 
 
 def to_sentence(s) -> str:

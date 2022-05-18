@@ -4,6 +4,12 @@ sys.path.append(path_to_module)
 
 import main
 
+def mult():
+    assert main.mult(3, 4) == 12
+    assert main.mult(3.5, 4) == 12
+    assert main.mult(3.9, 4) == 12
+    assert main.mult(3.9, 4.1) == 13
+
 
 def test_add():
     assert main.add(3, 4) == 7

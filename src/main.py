@@ -1,3 +1,4 @@
+
 class Trie:
     
     def __init__(self):
@@ -19,5 +20,4 @@ class Trie:
 
     def random(self):
         return 0
-
 

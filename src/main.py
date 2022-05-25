@@ -1,18 +1,23 @@
-import math
-import os
+class Trie:
+    
+    def __init__(self):
+        self.i=0
 
-def mult(a,b) -> int:
-    return math.floor(a * b)
+    def insert(self, word):
+        return 0
+        
+
+    def search(self, word):
+        return 0
+    
+    # delete, print, random
+    def delete(self, word):
+        return 0
+
+    def print(self):
+        return 0
+
+    def random(self):
+        return 0
 
 
-def add(a, b) -> int:
-    return math.floor(b + a)
-
-
-def to_sentence(s) -> str:
-    s = s.capitalize()
-
-    if s.endswith('.'):
-        return s
-    else:
-        return s + '.'

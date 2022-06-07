@@ -2,23 +2,54 @@ import sys
 path_to_module = "./src/"
 sys.path.append(path_to_module)
 
-import main
+from main import *
 
-def mult():
-    assert main.mult(3, 4) == 12
-    assert main.mult(3.5, 4) == 12
-    assert main.mult(3.9, 4) == 12
-    assert main.mult(3.9, 4.1) == 13
-
-
-def test_add():
-    assert main.add(3, 4) == 7
-    assert main.add(3.5, 4) == 7
-    assert main.add(3.9, 4) == 7
-    assert main.add(3.9, 4.1) == 8
+def fake_isWord(word,fromWhere):
+    if word in fromWhere:
+        return True
+    else:
+        return False
 
 
-def test_to_sentence():
-    assert main.to_sentence('apple') == 'Apple.'
-    assert main.to_sentence('Apple trees') == 'Apple trees.'
-    assert main.to_sentence('Apple trees.') == 'Apple trees.'
+def test_insert():
+    #joke fake mock cake bake shake make lake
+    words = ['joke','fake','mock','cake','bake','shake','make','ab','abcde','abcd']
+    for word in words:
+        insert(word,words,fake_isWord)==True
+    
+    assert insert("lake",words,fake_isWord) == False
+
+
+def test_search():
+    assert search("") == False
+    assert search("ab") == True
+    assert search("abcd") == True
+    assert search("abcde") == True
+    assert search("jake") == False
+
+def test_show():
+    assert showAllWords() == None
+
+def test_delete():
+    assert delete("") == False
+    assert delete("jake") == False
+    assert delete("ab") == True
+    assert delete("abcd") == True
+    assert delete("abcde") == True
+
+
+def test_random():
+    #joke fake mock cake bake shake make
+    words = ['joke','fake','mock','cake','bake','shake','make','at','attention','ab']
+    for word in words:
+        insert(word,words,fake_isWord)
+
+    assert random() in words
+
+def test_wordsWith():
+    #assert wordsWith("") == []
+    assert wordsWith("joke") == ['joke']
+    assert wordsWith('at') == ['at','attention']
+    assert wordsWith('attention') == ['attention']
+    assert wordsWith('a') == ['at','attention','ab']
+    assert wordsWith('so') == []

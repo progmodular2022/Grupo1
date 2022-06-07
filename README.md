@@ -1,16 +1,51 @@
-# Repositório para testes automatizados em python usando github actions
+# Documentação Arvore Trie
 
-Baseado em na template de [programmingwithalex](https://github.com/programmingwithalex)
-Vindo seguinte vídeo [YouTube video](https://www.youtube.com/watch?v=rY-igT2N8zU&list=PL0dOL8Z7pG3J6t1pqRQiNarBGY-ZnIJcq&index=2).
+def insert(word,fromWhere,isWord):
+  Comportamento:  
+    Função que insere nova palavra na Árvore Trie
+  Parâmetros:
+    - Palavra a inserir (string word)
+    - Lugar onde as palavras válidas são checadas (n fromWhere)
+    - Função de verificação se a palavra e válida (boolean hotspot)
+  Retorno:
+    - True se conseguir inserir, do contrario False
 
-## Descrição
-Repositório para integração contínua através de testes automatizados em Python
+def search(word):
+  Comportamento:  
+    Função que verifica se palavra está na Árvore Trie
+  Parâmetros:
+    - Palavra a ser procurada (string word)
+  Retorno:
+    - True se achar palavra na árvore, False se não achar
 
-O linting is é feito usando um GitHub Action customizado [`pylinters`](https://github.com/marketplace/actions/pylinters) escrito por programmingwithalex. 
-Os testes são feito pelo pytest.
+def delete(word):
+  Comportamento:  
+    Função que remove palavra da Árvore Trie
+  Parâmetros:
+    - Palavra a ser excluída (string word)
+  Retorno:
+    - retorna True se conseguir deletar, do contrário False
 
-## Conteúdo
+def showAllWords():
+  Comportamento:  
+    Função que exibe todas as palavra da Árvore Trie
+  Parâmetros:
+    - Não recebe Parâmentros
+  Retorno:
+    - Não há retorno
 
-* Arquivos `main.py` e `test_main.py` que servem como exemplo para como rodar os testes automatizados
-* Diretório `tests/` contém as várias runs de `pytest` que serão rodadas, uma para cada arquivo `.py` que será testado
-* `requirements.txt` que contém os packages necessários para a integração contínua
+def wordsWith(prefix):
+  Comportamento:
+    Função que exibe todas as palavras da Árvore Trie com determinado prefixo
+  Parâmetros:
+    - Prefixo que será utilizado para exibição (string prefix)
+  Retorno:
+    - Lista com todas as palavras com prefixo requisitado
+
+def random():
+  Comportamento:
+    Função que retorna uma palavra aleatória presente na Árvore Trie
+  Parâmetros:
+    - Não recebe Parâmetros
+  Retorno:
+    - retorna uma palavra aleatória da Árvore Trie

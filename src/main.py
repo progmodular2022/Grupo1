@@ -2,7 +2,7 @@ from random import choice
 from json import dumps
 
 
-__trie = {} #arvore dicionario
+__trie: dict = {} #arvore dicionario
 
 def insert(word,fromWhere,isWord) -> bool: 
     if isWord(word,fromWhere)!=False and len(word)!=0: #se nao for palavra vazia e se existir a palavra
@@ -12,7 +12,7 @@ def insert(word,fromWhere,isWord) -> bool:
         return False
 
 
-def __insertRec(dictTree,word,index) -> bool:
+def __insertRec(dictTree,word,index) -> None:
     current = dictTree #no atual
     if index == len(word): #se chegar no final da palavra
         current['isWord'] = True #marca como palavra
@@ -21,6 +21,7 @@ def __insertRec(dictTree,word,index) -> bool:
         if word[index] not in current: #se ainda nao existir a letra cria novo no
             current[word[index]] = {}
         __insertRec(current[word[index]],word,index+1) #chama recursivamente
+    return
 
 def search(word) -> bool:
     if len(word)==0: #se for palavra vazia retorna falso
